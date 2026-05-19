@@ -1,0 +1,13 @@
+class_name Constants
+
+enum EYETHEME {
+	DEFAULT
+}
+
+enum SETTINGS {
+	LOCATION_X,
+	LOCATION_Y,
+	TIME_BLINK,
+	TIME_BETWEEN,
+	EYE_THEME
+}
