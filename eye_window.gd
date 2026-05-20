@@ -14,7 +14,7 @@ func _ready() -> void:
 	content_control.modulate.a = 0.0
 
 func show_content():
-	#show()
+	show()
 	if showhide_tween:
 		showhide_tween.kill()
 	showhide_tween = get_tree().create_tween()
@@ -30,5 +30,5 @@ func hide_content():
 	showhide_tween.tween_property(content_control, "modulate:a", 0.0, 0.3).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
 	blink_dummy.animated = false
 	await showhide_tween.finished
-	#hide()
+	hide()
 	pass

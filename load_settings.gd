@@ -32,6 +32,8 @@ func save_settings():
 	
 func load_settings():
 	var file = FileAccess.open(settings_path.path_join(settings_file), FileAccess.READ)
+	if not file:
+		return
 	var str = file.get_as_text()
 	var json = JSON.parse_string(str) as Dictionary
 	print(json)
