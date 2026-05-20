@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cpqmgxdetppkx"]
+
+[ext_resource type="Script" uid="uid://b4rnlddsmd1ja" path="res://hover_anim.gd" id="1_mfvfe"]
+
+[node name="HoverAnim" type="Node" unique_id=1335067367 node_paths=PackedStringArray("detect_control", "animated_control")]
+script = ExtResource("1_mfvfe")
+detect_control = NodePath("")
+animated_control = NodePath("")

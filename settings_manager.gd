@@ -5,8 +5,10 @@ extends Node
 @export var load_settings : LoadSettings
 @export var eye_control : EyeControl
 
-@export var time_blink_slider : SpinBox
-@export var time_between_slider : SpinBox
+@export var time_blink_slider : HSlider
+@export var time_between_slider : HSlider
+@export var time_between_box : LineEdit
+@export var time_blink_box : LineEdit
 @export var window_up_button : Button
 @export var window_down_button : Button
 @export var window_left_button : Button
@@ -32,6 +34,7 @@ func _physics_process(delta: float) -> void:
 func _on_time_pause_slider_value_changed(value: float) -> void:
 	eye_control.stop()
 	eye_control.between_time = value
+	time_between_box.text = str(value)
 	load_settings.change_setting(Constants.SETTINGS.TIME_BETWEEN, value)
 	eye_control.resume()
 	pass # Replace with function body.
@@ -40,6 +43,7 @@ func _on_time_pause_slider_value_changed(value: float) -> void:
 func _on_time_blink_slider_value_changed(value: float) -> void:
 	eye_control.stop()
 	eye_control.blink_time = value
+	time_blink_box.text = str(value)
 	load_settings.change_setting(Constants.SETTINGS.TIME_BLINK, value)
 	eye_control.resume()
 	pass # Replace with function body.
@@ -123,4 +127,20 @@ func _on_reset_location_button_down() -> void:
 func _on_quit_button_button_down() -> void:
 	get_tree().root.propagate_notification(NOTIFICATION_WM_CLOSE_REQUEST)
 	get_tree().quit(0)
+	pass # Replace with function body.
+
+
+func _on_pause_edit_text_changed(new_text: String) -> void:
+	if new_text.is_valid_float():
+		var as_float : float = new_text.to_float()
+		as_float = max(1, as_float)
+		time_between_slider.value = as_float
+	pass # Replace with function body.
+
+
+func _on_blink_edit_text_changed(new_text: String) -> void:
+	if new_text.is_valid_float():
+		var as_float : float = new_text.to_float()
+		as_float = max(1, as_float)
+		time_blink_slider.value = as_float
 	pass # Replace with function body.

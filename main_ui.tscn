@@ -3,18 +3,33 @@
 [ext_resource type="Script" uid="uid://b107la0kiyd2g" path="res://eye_control.gd" id="1_2ppmm"]
 [ext_resource type="Script" uid="uid://cfdpbjo8r8khw" path="res://main_ui.gd" id="1_n1q3t"]
 [ext_resource type="Script" uid="uid://ddtgm7w1impey" path="res://eye_window.gd" id="1_w37m7"]
+[ext_resource type="Texture2D" uid="uid://82fdatdr2dab" path="res://assets/card_back_left.svg" id="2_b7t0n"]
 [ext_resource type="Script" uid="uid://djt75f12rcox1" path="res://blink_dummy.gd" id="2_ktt6o"]
+[ext_resource type="Texture2D" uid="uid://cqoth8aun0lib" path="res://assets/card_back_right.svg" id="3_im5q1"]
 [ext_resource type="Script" uid="uid://bvbcnfygh4i4b" path="res://load_settings.gd" id="4_4uoxc"]
+[ext_resource type="Texture2D" uid="uid://m52rxd57jcmi" path="res://assets/card_front.svg" id="4_8yam0"]
 [ext_resource type="Script" uid="uid://ccdta3y62e2i6" path="res://settings_manager.gd" id="5_llbac"]
+[ext_resource type="Texture2D" uid="uid://dpkxyb06jnu68" path="res://assets/lashes.svg" id="5_mcdcf"]
+[ext_resource type="Texture2D" uid="uid://buqk4dep56803" path="res://assets/eye_yellow.svg" id="6_sd2ej"]
+[ext_resource type="Texture2D" uid="uid://7m3ox6f73knw" path="res://assets/iris.svg" id="7_dnsp1"]
+[ext_resource type="Texture2D" uid="uid://o1s0srtt5eks" path="res://assets/rim.svg" id="8_ilgax"]
+[ext_resource type="Script" uid="uid://e0ilpghkh5t3" path="res://iris.gd" id="8_yubjs"]
+[ext_resource type="Theme" uid="uid://w7js08kqrk18" path="res://green_theme.tres" id="14_sd2ej"]
+[ext_resource type="PackedScene" uid="uid://cpqmgxdetppkx" path="res://hover_anim.tscn" id="15_dnsp1"]
 
-[sub_resource type="Gradient" id="Gradient_llbac"]
-offsets = PackedFloat32Array(0.5301205, 0.6807229)
-colors = PackedColorArray(0.26999998, 0.5, 0.32366666, 0.8509804, 0.26999998, 0.5, 0.32366666, 0)
+[sub_resource type="Theme" id="Theme_81ket"]
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_n1q3t"]
-gradient = SubResource("Gradient_llbac")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
+[sub_resource type="DPITexture" id="DPITexture_sd2ej"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"8\"><path fill=\"none\" stroke=\"#fff\" stroke-width=\"2\" d=\"m12 2-4 3.5L4 2\"/></svg>
+"
+
+[sub_resource type="DPITexture" id="DPITexture_dnsp1"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"8\"><path fill=\"none\" stroke=\"#fff\" stroke-width=\"2\" d=\"m4 6 4-3.5L12 6\"/></svg>
+"
+
+[sub_resource type="DPITexture" id="DPITexture_ilgax"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"8\"><path fill=\"none\" stroke=\"#fff\" stroke-width=\"2\" d=\"m4 6 4-3.5L12 6\"/></svg>
+"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_td82l"]
 draw_center = false
@@ -28,17 +43,6 @@ expand_margin_top = 47.0
 expand_margin_right = 18.0
 expand_margin_bottom = 26.0
 
-[sub_resource type="Gradient" id="Gradient_td82l"]
-interpolation_mode = 1
-offsets = PackedFloat32Array(0.87349397, 0.91566265, 1)
-colors = PackedColorArray(0.26999998, 0.5, 0.32366666, 1, 1, 1, 1, 1, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_2ppmm"]
-gradient = SubResource("Gradient_td82l")
-fill = 1
-fill_from = Vector2(0.5304348, 0.5043478)
-fill_to = Vector2(0.8086957, 0.12608695)
-
 [node name="MainUI" type="Control" unique_id=1400035991]
 layout_mode = 3
 anchors_preset = 15
@@ -46,26 +50,399 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_n1q3t")
 
-[node name="DragArea" type="TextureRect" parent="." unique_id=895715133]
+[node name="Control" type="Control" parent="." unique_id=597046514]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CardLeft" type="TextureRect" parent="Control" unique_id=654044405]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -12.0
-offset_bottom = -12.0
+offset_left = -208.5
+offset_top = -196.5
+offset_right = 160.5
+offset_bottom = 210.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_b7t0n")
+stretch_mode = 5
+
+[node name="CardRight" type="TextureRect" parent="Control" unique_id=378093700]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -163.0
+offset_top = -193.0
+offset_right = 207.0
+offset_bottom = 211.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_im5q1")
+stretch_mode = 5
+
+[node name="CardFront" type="TextureRect" parent="Control" unique_id=766263985]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -171.5
+offset_top = -197.5
+offset_right = 171.5
+offset_bottom = 197.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_8yam0")
+stretch_mode = 5
+
+[node name="Lashes" type="TextureRect" parent="Control" unique_id=1693516360]
+show_behind_parent = true
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.5
+offset_top = -283.5
+offset_right = 125.5
+offset_bottom = -96.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_mcdcf")
+stretch_mode = 5
+
+[node name="Eye" type="TextureRect" parent="Control" unique_id=945899385]
+clip_children = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.5
+offset_top = -249.0
+offset_right = 70.5
+offset_bottom = -163.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+texture = ExtResource("6_sd2ej")
+stretch_mode = 5
+
+[node name="Iris" type="TextureRect" parent="Control/Eye" unique_id=706868108 node_paths=PackedStringArray("reference_point")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.0
+offset_top = -34.5
+offset_right = 26.0
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+offset_transform_enabled = true
+texture = ExtResource("7_dnsp1")
+stretch_mode = 5
+script = ExtResource("8_yubjs")
+reference_point = NodePath("..")
+
+[node name="Rim" type="TextureRect" parent="Control" unique_id=1483306143]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -74.0
+offset_top = -252.5
+offset_right = 74.0
+offset_bottom = -159.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_ilgax")
+stretch_mode = 5
+
+[node name="DragArea" type="Control" parent="." unique_id=949734847]
+z_index = 3
+z_as_relative = false
+layout_mode = 1
+anchor_left = 0.226
+anchor_top = 0.028571429
+anchor_right = 0.772
+anchor_bottom = 0.2704762
 grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
-texture = SubResource("GradientTexture2D_n1q3t")
+theme = SubResource("Theme_81ket")
+metadata/_edit_use_anchors_ = true
+
+[node name="SettingsMenu" type="VBoxContainer" parent="." unique_id=141851068]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -223.5
+offset_top = -114.0
+offset_right = 223.5
+offset_bottom = 253.445
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("14_sd2ej")
+theme_override_constants/separation = 14
+
+[node name="HoverAnim" parent="SettingsMenu" unique_id=1335067367 node_paths=PackedStringArray("detect_control", "animated_control") instance=ExtResource("15_dnsp1")]
+hover_animated = false
+detect_control = NodePath("../PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/TimePauseSlider")
+animated_control = NodePath("../PanelContainer")
+
+[node name="HoverAnim2" parent="SettingsMenu" unique_id=1882980409 node_paths=PackedStringArray("detect_control", "animated_control") instance=ExtResource("15_dnsp1")]
+hover_animated = false
+detect_control = NodePath("../PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4/TimeBlinkSlider")
+animated_control = NodePath("../PanelContainer")
+
+[node name="PanelContainer" type="PanelContainer" parent="SettingsMenu" unique_id=1647049613]
+custom_minimum_size = Vector2(447.665, 0)
+layout_mode = 2
+offset_transform_enabled = true
+theme = ExtResource("14_sd2ej")
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingsMenu/PanelContainer" unique_id=1378495691]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsMenu/PanelContainer/MarginContainer" unique_id=1281388902]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="SettingsMenu/PanelContainer/MarginContainer/VBoxContainer" unique_id=1104593542]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TimePause" type="RichTextLabel" parent="SettingsMenu/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1726471634]
+modulate = Color(0.1764706, 0.3254902, 0.36862746, 1)
+layout_mode = 2
+mouse_filter = 2
+text = "STARE TIME"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimePauseSlider" type="HSlider" parent="SettingsMenu/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=662926311]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 1.0
+max_value = 600.0
+value = 120.0
+
+[node name="PauseEdit" type="LineEdit" parent="SettingsMenu/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1168105848]
+layout_mode = 2
+text = "120"
+alignment = 1
+select_all_on_focus = true
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="SettingsMenu/PanelContainer/MarginContainer/VBoxContainer" unique_id=1254423203]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TimePause" type="RichTextLabel" parent="SettingsMenu/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=469856106]
+modulate = Color(0.1764706, 0.3254902, 0.36862746, 1)
+layout_mode = 2
+mouse_filter = 2
+text = "BLINK TIME"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimeBlinkSlider" type="HSlider" parent="SettingsMenu/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=786188505]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 0.5
+max_value = 30.0
+step = 0.5
+value = 8.0
+
+[node name="BlinkEdit" type="LineEdit" parent="SettingsMenu/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=2141911546]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "8"
+alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="SettingsMenu" unique_id=2059855289]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 29
+alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="SettingsMenu/HBoxContainer2" unique_id=1777530942]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingsMenu/HBoxContainer2/PanelContainer" unique_id=831585793]
+layout_mode = 2
+theme_override_constants/margin_top = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsMenu/HBoxContainer2/PanelContainer/MarginContainer" unique_id=1407420727]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="SettingsMenu/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer" unique_id=1003874847]
+modulate = Color(0.1764706, 0.3254902, 0.36862746, 1)
+layout_mode = 2
+text = "EYE LOCATION"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="LocationGrid" type="HBoxContainer" parent="SettingsMenu/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer" unique_id=68472009]
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="UpButton" type="Button" parent="SettingsMenu/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/LocationGrid" unique_id=2022474581]
+layout_mode = 2
+size_flags_horizontal = 4
+icon = SubResource("DPITexture_sd2ej")
+icon_alignment = 1
+
+[node name="DownButton" type="Button" parent="SettingsMenu/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/LocationGrid" unique_id=1667485396]
+layout_mode = 2
+size_flags_horizontal = 4
+icon = SubResource("DPITexture_dnsp1")
+icon_alignment = 1
+
+[node name="RightButton" type="Button" parent="SettingsMenu/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/LocationGrid" unique_id=1577496882]
+layout_mode = 2
+icon = SubResource("DPITexture_ilgax")
+icon_alignment = 1
+
+[node name="LeftButton" type="Button" parent="SettingsMenu/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/LocationGrid" unique_id=1192853577]
+layout_mode = 2
+icon = SubResource("DPITexture_sd2ej")
+
+[node name="ResetLocation" type="Button" parent="SettingsMenu/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/LocationGrid" unique_id=1733865231]
+layout_mode = 2
+size_flags_vertical = 4
+text = "RESET"
+
+[node name="EyeThemeMenu" type="OptionButton" parent="SettingsMenu" unique_id=231669819]
+layout_mode = 2
+size_flags_horizontal = 4
+selected = 0
+item_count = 1
+popup/item_0/text = "THEME"
+popup/item_0/id = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsMenu" unique_id=61085639]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 22
+
+[node name="SaveButton" type="Button" parent="SettingsMenu/HBoxContainer" unique_id=668540220]
+layout_mode = 2
+size_flags_vertical = 4
+offset_transform_enabled = true
+theme_override_colors/font_color = Color(0.1764706, 0.3254902, 0.36862746, 1)
+theme_override_colors/font_hover_color = Color(0.1764706, 0.3254902, 0.36862746, 1)
+text = "SAVE"
+flat = true
+
+[node name="PanelContainer" type="PanelContainer" parent="SettingsMenu/HBoxContainer/SaveButton" unique_id=162489375]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+
+[node name="HoverAnim" parent="SettingsMenu/HBoxContainer/SaveButton" unique_id=1439943502 node_paths=PackedStringArray("detect_control", "animated_control") instance=ExtResource("15_dnsp1")]
+detect_control = NodePath("../PanelContainer")
+animated_control = NodePath("..")
+
+[node name="LoadButton" type="Button" parent="SettingsMenu/HBoxContainer" unique_id=1898483015]
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_colors/font_color = Color(0.1764706, 0.3254902, 0.36862746, 1)
+theme_override_colors/font_hover_color = Color(0.1764706, 0.3254902, 0.36862746, 1)
+text = "LOAD
+"
+flat = true
+
+[node name="PanelContainer2" type="PanelContainer" parent="SettingsMenu/HBoxContainer/LoadButton" unique_id=723386857]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+
+[node name="HoverAnim" parent="SettingsMenu/HBoxContainer/LoadButton" unique_id=44108606 node_paths=PackedStringArray("detect_control", "animated_control") instance=ExtResource("15_dnsp1")]
+detect_control = NodePath("../PanelContainer2")
+animated_control = NodePath("..")
+
+[node name="QuitButton" type="Button" parent="SettingsMenu/HBoxContainer" unique_id=355002473]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+offset_transform_enabled = true
+theme_override_colors/font_color = Color(0.1764706, 0.3254902, 0.36862746, 1)
+theme_override_colors/font_hover_color = Color(0.1764706, 0.3254902, 0.36862746, 1)
+text = "QUIT"
+flat = true
+
+[node name="PanelContainer3" type="PanelContainer" parent="SettingsMenu/HBoxContainer/QuitButton" unique_id=22667430]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+
+[node name="HoverAnim" parent="SettingsMenu/HBoxContainer/QuitButton" unique_id=664597235 node_paths=PackedStringArray("detect_control", "animated_control") instance=ExtResource("15_dnsp1")]
+detect_control = NodePath("../PanelContainer3")
+animated_control = NodePath("..")
 
 [node name="EyeWindow" type="Window" parent="." unique_id=1307966196 node_paths=PackedStringArray("content_control", "blink_dummy")]
 transparent_bg = true
 handle_input_locally = false
 gui_disable_input = true
 oversampling_override = 1.0
-position = Vector2i(1146, 0)
+position = Vector2i(682, 0)
 size = Vector2i(200, 100)
 unresizable = true
 borderless = true
@@ -102,8 +479,74 @@ grow_vertical = 2
 offset_transform_enabled = true
 offset_transform_scale = Vector2(1, 0.995)
 mouse_filter = 2
-texture = SubResource("GradientTexture2D_2ppmm")
 script = ExtResource("2_ktt6o")
+
+[node name="Lashes" type="TextureRect" parent="EyeWindow/Control/BlinkDummy" unique_id=50524173]
+show_behind_parent = true
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.5
+offset_top = -59.5
+offset_right = 125.499985
+offset_bottom = 63.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_mcdcf")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Eye" type="TextureRect" parent="EyeWindow/Control/BlinkDummy" unique_id=1954478300]
+clip_children = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.5
+offset_top = -43.0
+offset_right = 70.5
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+texture = ExtResource("6_sd2ej")
+stretch_mode = 5
+
+[node name="Iris" type="TextureRect" parent="EyeWindow/Control/BlinkDummy/Eye" unique_id=1910590422 node_paths=PackedStringArray("reference_point")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.0
+offset_top = -34.5
+offset_right = 26.0
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+offset_transform_enabled = true
+texture = ExtResource("7_dnsp1")
+stretch_mode = 5
+script = ExtResource("8_yubjs")
+reference_point = NodePath("../../../../../Control/Eye")
+
+[node name="Rim" type="TextureRect" parent="EyeWindow/Control/BlinkDummy" unique_id=1070808104]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_ilgax")
+stretch_mode = 5
 
 [node name="EyeControl" type="Node" parent="." unique_id=1330215199 node_paths=PackedStringArray("eye_window", "blink_timer", "between_timer")]
 script = ExtResource("1_2ppmm")
@@ -123,138 +566,37 @@ script = ExtResource("4_4uoxc")
 save_button = NodePath("../SettingsMenu/HBoxContainer/SaveButton")
 load_button = NodePath("../SettingsMenu/HBoxContainer/LoadButton")
 
-[node name="SettingsManager" type="Node" parent="." unique_id=1831403390 node_paths=PackedStringArray("eye_window", "load_settings", "eye_control", "time_blink_slider", "time_between_slider", "window_up_button", "window_down_button", "window_left_button", "window_right_button", "eye_theme_menu")]
+[node name="SettingsManager" type="Node" parent="." unique_id=1831403390 node_paths=PackedStringArray("eye_window", "load_settings", "eye_control", "time_blink_slider", "time_between_slider", "time_between_box", "time_blink_box", "window_up_button", "window_down_button", "window_left_button", "window_right_button", "eye_theme_menu")]
 script = ExtResource("5_llbac")
 eye_window = NodePath("../EyeWindow")
 load_settings = NodePath("../LoadSettings")
 eye_control = NodePath("../EyeControl")
-time_blink_slider = NodePath("../SettingsMenu/HBoxContainer4/TimeBlinkSlider")
-time_between_slider = NodePath("../SettingsMenu/HBoxContainer3/TimePauseSlider")
-window_up_button = NodePath("../SettingsMenu/HBoxContainer2/VBoxContainer/UpButton")
-window_down_button = NodePath("../SettingsMenu/HBoxContainer2/VBoxContainer/DownButton")
-window_left_button = NodePath("../SettingsMenu/HBoxContainer2/VBoxContainer/LocationGrid/LeftButton")
-window_right_button = NodePath("../SettingsMenu/HBoxContainer2/VBoxContainer/LocationGrid/RightButton")
+time_blink_slider = NodePath("../SettingsMenu/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4/TimeBlinkSlider")
+time_between_slider = NodePath("../SettingsMenu/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/TimePauseSlider")
+time_between_box = NodePath("../SettingsMenu/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/PauseEdit")
+time_blink_box = NodePath("../SettingsMenu/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4/BlinkEdit")
+window_up_button = NodePath("../SettingsMenu/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/LocationGrid/UpButton")
+window_down_button = NodePath("../SettingsMenu/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/LocationGrid/DownButton")
+window_left_button = NodePath("../SettingsMenu/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/LocationGrid/LeftButton")
+window_right_button = NodePath("../SettingsMenu/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/LocationGrid/RightButton")
 eye_theme_menu = NodePath("../SettingsMenu/EyeThemeMenu")
-
-[node name="SettingsMenu" type="VBoxContainer" parent="." unique_id=141851068]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -125.0
-offset_top = -132.5
-offset_right = 125.0
-offset_bottom = 132.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="SettingsMenu" unique_id=1104593542]
-layout_mode = 2
-
-[node name="TimePause" type="Label" parent="SettingsMenu/HBoxContainer3" unique_id=1122386461]
-modulate = Color(0, 0, 0, 1)
-layout_mode = 2
-text = "Time between blinks"
-
-[node name="TimePauseSlider" type="SpinBox" parent="SettingsMenu/HBoxContainer3" unique_id=1871846606]
-layout_mode = 2
-size_flags_horizontal = 3
-max_value = 600.0
-value = 120.0
-alignment = 2
-
-[node name="HBoxContainer4" type="HBoxContainer" parent="SettingsMenu" unique_id=1254423203]
-layout_mode = 2
-
-[node name="TimeBlink" type="Label" parent="SettingsMenu/HBoxContainer4" unique_id=1499077604]
-modulate = Color(0, 0, 0, 1)
-layout_mode = 2
-text = "Blink Length"
-
-[node name="TimeBlinkSlider" type="SpinBox" parent="SettingsMenu/HBoxContainer4" unique_id=198933838]
-layout_mode = 2
-size_flags_horizontal = 3
-max_value = 30.0
-step = 0.5
-value = 8.0
-alignment = 2
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="SettingsMenu" unique_id=2059855289]
-layout_mode = 2
-size_flags_vertical = 4
-theme_override_constants/separation = 29
-alignment = 1
-
-[node name="ResetLocation" type="Button" parent="SettingsMenu/HBoxContainer2" unique_id=1733865231]
-layout_mode = 2
-size_flags_vertical = 4
-text = "Reset Location"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="SettingsMenu/HBoxContainer2" unique_id=1407420727]
-layout_mode = 2
-
-[node name="UpButton" type="Button" parent="SettingsMenu/HBoxContainer2/VBoxContainer" unique_id=2022474581]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "Up"
-
-[node name="LocationGrid" type="HBoxContainer" parent="SettingsMenu/HBoxContainer2/VBoxContainer" unique_id=68472009]
-layout_mode = 2
-alignment = 1
-
-[node name="RightButton" type="Button" parent="SettingsMenu/HBoxContainer2/VBoxContainer/LocationGrid" unique_id=1577496882]
-layout_mode = 2
-text = "Left"
-
-[node name="LeftButton" type="Button" parent="SettingsMenu/HBoxContainer2/VBoxContainer/LocationGrid" unique_id=1192853577]
-layout_mode = 2
-text = "Right"
-
-[node name="DownButton" type="Button" parent="SettingsMenu/HBoxContainer2/VBoxContainer" unique_id=1667485396]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-text = "Down"
-
-[node name="EyeThemeMenu" type="OptionButton" parent="SettingsMenu" unique_id=231669819]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="SettingsMenu" unique_id=61085639]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="SaveButton" type="Button" parent="SettingsMenu/HBoxContainer" unique_id=668540220]
-layout_mode = 2
-text = "Save settings"
-
-[node name="LoadButton" type="Button" parent="SettingsMenu/HBoxContainer" unique_id=1898483015]
-layout_mode = 2
-text = "Load Settings
-"
-
-[node name="QuitButton" type="Button" parent="SettingsMenu" unique_id=355002473]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-text = "Quit"
 
 [connection signal="gui_input" from="DragArea" to="." method="_on_drag_area_gui_input"]
 [connection signal="mouse_exited" from="DragArea" to="." method="_on_drag_area_mouse_exited"]
-[connection signal="value_changed" from="SettingsMenu/HBoxContainer3/TimePauseSlider" to="SettingsManager" method="_on_time_pause_slider_value_changed"]
-[connection signal="value_changed" from="SettingsMenu/HBoxContainer4/TimeBlinkSlider" to="SettingsManager" method="_on_time_blink_slider_value_changed"]
-[connection signal="button_down" from="SettingsMenu/HBoxContainer2/ResetLocation" to="SettingsManager" method="_on_reset_location_button_down"]
-[connection signal="button_down" from="SettingsMenu/HBoxContainer2/VBoxContainer/UpButton" to="SettingsManager" method="_on_up_button_button_down"]
-[connection signal="button_up" from="SettingsMenu/HBoxContainer2/VBoxContainer/UpButton" to="SettingsManager" method="_on_up_button_button_up"]
-[connection signal="button_down" from="SettingsMenu/HBoxContainer2/VBoxContainer/LocationGrid/RightButton" to="SettingsManager" method="_on_right_button_button_down"]
-[connection signal="button_up" from="SettingsMenu/HBoxContainer2/VBoxContainer/LocationGrid/RightButton" to="SettingsManager" method="_on_right_button_button_up"]
-[connection signal="button_down" from="SettingsMenu/HBoxContainer2/VBoxContainer/LocationGrid/LeftButton" to="SettingsManager" method="_on_left_button_button_down"]
-[connection signal="button_up" from="SettingsMenu/HBoxContainer2/VBoxContainer/LocationGrid/LeftButton" to="SettingsManager" method="_on_left_button_button_up"]
-[connection signal="button_down" from="SettingsMenu/HBoxContainer2/VBoxContainer/DownButton" to="SettingsManager" method="_on_down_button_button_down"]
-[connection signal="button_up" from="SettingsMenu/HBoxContainer2/VBoxContainer/DownButton" to="SettingsManager" method="_on_down_button_button_up"]
+[connection signal="value_changed" from="SettingsMenu/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/TimePauseSlider" to="SettingsManager" method="_on_time_pause_slider_value_changed"]
+[connection signal="text_changed" from="SettingsMenu/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/PauseEdit" to="SettingsManager" method="_on_pause_edit_text_changed"]
+[connection signal="value_changed" from="SettingsMenu/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4/TimeBlinkSlider" to="SettingsManager" method="_on_time_blink_slider_value_changed"]
+[connection signal="text_changed" from="SettingsMenu/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4/BlinkEdit" to="SettingsManager" method="_on_blink_edit_text_changed"]
+[connection signal="button_down" from="SettingsMenu/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/LocationGrid/UpButton" to="SettingsManager" method="_on_up_button_button_down"]
+[connection signal="button_up" from="SettingsMenu/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/LocationGrid/UpButton" to="SettingsManager" method="_on_up_button_button_up"]
+[connection signal="button_down" from="SettingsMenu/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/LocationGrid/DownButton" to="SettingsManager" method="_on_down_button_button_down"]
+[connection signal="button_up" from="SettingsMenu/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/LocationGrid/DownButton" to="SettingsManager" method="_on_down_button_button_up"]
+[connection signal="button_down" from="SettingsMenu/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/LocationGrid/RightButton" to="SettingsManager" method="_on_right_button_button_down"]
+[connection signal="button_up" from="SettingsMenu/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/LocationGrid/RightButton" to="SettingsManager" method="_on_right_button_button_up"]
+[connection signal="button_down" from="SettingsMenu/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/LocationGrid/LeftButton" to="SettingsManager" method="_on_left_button_button_down"]
+[connection signal="button_up" from="SettingsMenu/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/LocationGrid/LeftButton" to="SettingsManager" method="_on_left_button_button_up"]
+[connection signal="button_down" from="SettingsMenu/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/LocationGrid/ResetLocation" to="SettingsManager" method="_on_reset_location_button_down"]
 [connection signal="item_selected" from="SettingsMenu/EyeThemeMenu" to="SettingsManager" method="_on_eye_theme_menu_item_selected"]
 [connection signal="button_down" from="SettingsMenu/HBoxContainer/SaveButton" to="SettingsManager" method="_on_save_button_button_down"]
 [connection signal="button_down" from="SettingsMenu/HBoxContainer/LoadButton" to="SettingsManager" method="_on_load_button_button_down"]
-[connection signal="button_down" from="SettingsMenu/QuitButton" to="SettingsManager" method="_on_quit_button_button_down"]
+[connection signal="button_down" from="SettingsMenu/HBoxContainer/QuitButton" to="SettingsManager" method="_on_quit_button_button_down"]

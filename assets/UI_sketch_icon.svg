@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="54.446705mm"
+   height="54.446705mm"
+   viewBox="0 0 54.446704 54.446704"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   sodipodi:docname="UI_sketch_icon.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="2.0334082"
+     inkscape:cx="436.21346"
+     inkscape:cy="350.88873"
+     inkscape:window-width="1842"
+     inkscape:window-height="1057"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:page
+       x="0"
+       y="0"
+       width="54.446705"
+       height="54.446705"
+       id="page2"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1">
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect2"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,0,0,1 @ F,0,0,1,0,19.639195,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,16.524536,0,1"
+       radius="0"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect2-4"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,0,0,1 @ F,0,0,1,0,19.639195,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,16.524536,0,1"
+       radius="0"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+  </defs>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     style="display:inline"
+     transform="translate(-88.104059,-64.258226)">
+    <path
+       d="m 120.55248,74.139145 -5.26728,14.607893 -5.41558,-14.557767 1.37586,15.40216 -11.11409,-11.183813 7.78123,13.533024 -14.891048,-5.876644 12.841358,9.324496 -16.092806,0.447001 10.356026,2.313554 h 29.80144 l 10.94402,-2.553333 -16.09684,-0.296106 12.74585,-9.444385 -14.8306,6.016171 7.6434,-13.605888 -11.00003,11.2882 z"
+       style="display:inline;fill:#2d535e;stroke:#2d535e;stroke-width:0.672921;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke"
+       id="path27"
+       inkscape:export-filename="iconsvg.svg"
+       inkscape:export-xdpi="412.2"
+       inkscape:export-ydpi="412.2" />
+    <path
+       d="M 134.05073,97.090715 H 95.837044 l 6.828006,1.189591 -1.2299,0.44235 11.12232,0.777731 15.99592,-1.12758 -0.52968,-0.185519 z"
+       style="display:inline;fill:#66864c;stroke:#2d535e;stroke-width:1.377;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke"
+       id="path29" />
+    <path
+       id="rect2"
+       style="display:inline;fill:#eecb63;fill-opacity:1;stroke:none;stroke-width:1.977;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;paint-order:fill markers stroke"
+       d="m 20.42565,85.198883 9.561371,-1.08927 a 15.954053,15.954053 44.411702 0 1 17.691128,17.331507 l -0.938374,10.07189 -7.408009,-0.82947 A 20.547296,20.547296 45.195678 0 1 21.183312,92.410699 Z"
+       inkscape:path-effect="#path-effect2"
+       inkscape:original-d="M 20.42565,85.198883 49.499998,81.886615 46.739775,111.51301 22.909851,108.84479 Z"
+       transform="rotate(-45,73.129717,-0.41771793)"
+       sodipodi:nodetypes="ccccc"
+       inkscape:label="eyeback"
+       inkscape:export-filename="eye_yellow.svg"
+       inkscape:export-xdpi="412.2"
+       inkscape:export-ydpi="412.2" />
+    <ellipse
+       style="display:inline;fill:#2d535e;fill-opacity:1;stroke:#66864c;stroke-width:1.977;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+       id="path2"
+       cx="115.00929"
+       cy="95.189659"
+       rx="5.9203763"
+       ry="8.1530924"
+       inkscape:label="iris"
+       inkscape:export-filename="iris.svg"
+       inkscape:export-xdpi="412.2"
+       inkscape:export-ydpi="412.2" />
+    <path
+       id="rect2-2"
+       style="display:inline;fill:none;fill-opacity:1;stroke:#2d535e;stroke-width:1.977;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke"
+       d="m 20.42565,85.198883 9.561371,-1.08927 a 15.954053,15.954053 44.411702 0 1 17.691128,17.331507 l -0.938374,10.07189 -7.408009,-0.82947 A 20.547296,20.547296 45.195678 0 1 21.183312,92.410699 Z"
+       transform="rotate(-45,72.490956,-0.68230126)"
+       sodipodi:nodetypes="ccccc"
+       inkscape:label="rim"
+       inkscape:export-filename="rim.svg"
+       inkscape:export-xdpi="412.2"
+       inkscape:export-ydpi="412.2"
+       inkscape:original-d="M 20.42565,85.198883 49.499998,81.886615 46.739775,111.51301 22.909851,108.84479 Z"
+       inkscape:path-effect="#path-effect2-4" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Ebene 2"
+     style="display:none"
+     transform="translate(-88.104059,-64.258226)">
+    <g
+       id="g5"
+       transform="translate(0,-3.7041668)">
+      <rect
+         style="fill:#2d535e;fill-opacity:1;stroke:#2d535e;stroke-width:1.37852;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+         id="rect4"
+         width="111.52528"
+         height="26.354471"
+         x="58.153889"
+         y="117.47967"
+         ry="5.4781818" />
+      <rect
+         style="fill:#eecb63;fill-opacity:1;stroke:#2d535e;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+         id="rect5"
+         width="111.50381"
+         height="27.187252"
+         x="58.164627"
+         y="114.94662"
+         ry="5.6512876" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.525px;line-height:0.8;font-family:'Showcard Gothic';-inkscape-font-specification:'Showcard Gothic';text-align:end;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:end;fill:#2d535e;fill-opacity:1;stroke:none;stroke-width:2.78208;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+         x="106.09602"
+         y="126.85523"
+         id="text5"><tspan
+           sodipodi:role="line"
+           id="tspan5"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.525px;font-family:Impact;-inkscape-font-specification:Impact;fill:#2d535e;fill-opacity:1;stroke:none;stroke-width:2.78208"
+           x="106.09602"
+           y="126.85523">STARE TIME</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.525px;line-height:0.8;font-family:'Showcard Gothic';-inkscape-font-specification:'Showcard Gothic';text-align:end;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:end;fill:#2d535e;fill-opacity:1;stroke:none;stroke-width:2.87339;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+         x="106.09602"
+         y="137.71809"
+         id="text5-8"><tspan
+           sodipodi:role="line"
+           id="tspan5-9"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.525px;font-family:Impact;-inkscape-font-specification:Impact;fill:#2d535e;fill-opacity:1;stroke:none;stroke-width:2.87339"
+           x="106.09602"
+           y="137.71809">BLINK TIME</tspan></text>
+    </g>
+  </g>
+</svg>
