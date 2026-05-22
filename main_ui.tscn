@@ -19,15 +19,7 @@
 
 [sub_resource type="Theme" id="Theme_81ket"]
 
-[sub_resource type="DPITexture" id="DPITexture_sd2ej"]
-_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"8\"><path fill=\"none\" stroke=\"#fff\" stroke-width=\"2\" d=\"m12 2-4 3.5L4 2\"/></svg>
-"
-
 [sub_resource type="DPITexture" id="DPITexture_dnsp1"]
-_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"8\"><path fill=\"none\" stroke=\"#fff\" stroke-width=\"2\" d=\"m4 6 4-3.5L12 6\"/></svg>
-"
-
-[sub_resource type="DPITexture" id="DPITexture_ilgax"]
 _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"8\"><path fill=\"none\" stroke=\"#fff\" stroke-width=\"2\" d=\"m4 6 4-3.5L12 6\"/></svg>
 "
 
@@ -208,16 +200,6 @@ grow_vertical = 2
 theme = ExtResource("14_sd2ej")
 theme_override_constants/separation = 14
 
-[node name="HoverAnim" parent="SettingsMenu" unique_id=1335067367 node_paths=PackedStringArray("detect_control", "animated_control") instance=ExtResource("15_dnsp1")]
-hover_animated = false
-detect_control = NodePath("../PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/TimePauseSlider")
-animated_control = NodePath("../PanelContainer")
-
-[node name="HoverAnim2" parent="SettingsMenu" unique_id=1882980409 node_paths=PackedStringArray("detect_control", "animated_control") instance=ExtResource("15_dnsp1")]
-hover_animated = false
-detect_control = NodePath("../PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4/TimeBlinkSlider")
-animated_control = NodePath("../PanelContainer")
-
 [node name="PanelContainer" type="PanelContainer" parent="SettingsMenu" unique_id=1647049613]
 custom_minimum_size = Vector2(447.665, 0)
 layout_mode = 2
@@ -254,6 +236,13 @@ min_value = 1.0
 max_value = 600.0
 value = 120.0
 
+[node name="HoverAnim" parent="SettingsMenu/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/TimePauseSlider" unique_id=1335067367 node_paths=PackedStringArray("detect_control", "animated_control") instance=ExtResource("15_dnsp1")]
+hover_animated = false
+click_animated = false
+release_animated = true
+detect_control = NodePath("..")
+animated_control = NodePath("../../../../..")
+
 [node name="PauseEdit" type="LineEdit" parent="SettingsMenu/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1168105848]
 layout_mode = 2
 text = "120"
@@ -273,6 +262,13 @@ fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="HoverAnim2" parent="SettingsMenu/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4/TimePause" unique_id=1882980409 node_paths=PackedStringArray("detect_control", "animated_control") instance=ExtResource("15_dnsp1")]
+hover_animated = false
+click_animated = false
+release_animated = true
+detect_control = NodePath("../../TimeBlinkSlider")
+animated_control = NodePath("../../../../..")
 
 [node name="TimeBlinkSlider" type="HSlider" parent="SettingsMenu/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=786188505]
 layout_mode = 2
@@ -321,23 +317,71 @@ alignment = 1
 [node name="UpButton" type="Button" parent="SettingsMenu/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/LocationGrid" unique_id=2022474581]
 layout_mode = 2
 size_flags_horizontal = 4
-icon = SubResource("DPITexture_sd2ej")
+offset_transform_enabled = true
+offset_transform_visual_only = false
+text = "   "
 icon_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="SettingsMenu/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/LocationGrid/UpButton" unique_id=1333471738]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("DPITexture_dnsp1")
+stretch_mode = 5
 
 [node name="DownButton" type="Button" parent="SettingsMenu/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/LocationGrid" unique_id=1667485396]
 layout_mode = 2
 size_flags_horizontal = 4
-icon = SubResource("DPITexture_dnsp1")
+text = "   "
 icon_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="SettingsMenu/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/LocationGrid/DownButton" unique_id=809609686]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 3.1415927
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = SubResource("DPITexture_dnsp1")
+stretch_mode = 5
 
 [node name="RightButton" type="Button" parent="SettingsMenu/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/LocationGrid" unique_id=1577496882]
 layout_mode = 2
-icon = SubResource("DPITexture_ilgax")
+text = "   "
 icon_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="SettingsMenu/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/LocationGrid/RightButton" unique_id=1432629325]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5707964
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = SubResource("DPITexture_dnsp1")
+stretch_mode = 5
 
 [node name="LeftButton" type="Button" parent="SettingsMenu/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/LocationGrid" unique_id=1192853577]
 layout_mode = 2
-icon = SubResource("DPITexture_sd2ej")
+text = "   "
+
+[node name="TextureRect" type="TextureRect" parent="SettingsMenu/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/LocationGrid/LeftButton" unique_id=910219604]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.5707964
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = SubResource("DPITexture_dnsp1")
+stretch_mode = 5
 
 [node name="ResetLocation" type="Button" parent="SettingsMenu/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/LocationGrid" unique_id=1733865231]
 layout_mode = 2

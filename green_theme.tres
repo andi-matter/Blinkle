@@ -23,13 +23,16 @@ expand_margin_right = 5.0
 expand_margin_bottom = 3.0
 
 [sub_resource type="Gradient" id="Gradient_edg4p"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0.09803922, 0.09803922, 0.09803922, 0)
+offsets = PackedFloat32Array(0.8678161)
+colors = PackedColorArray(0.4, 0.5019608, 0.27450982, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_p1ek5"]
 gradient = SubResource("Gradient_edg4p")
-width = 8
-height = 8
+width = 20
+height = 20
+fill = 1
+fill_from = Vector2(0.508547, 0.51282054)
+fill_to = Vector2(0.89316237, 0.10683761)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p1ek5"]
 bg_color = Color(0.4, 0.5254902, 0.29803923, 1)
@@ -95,7 +98,7 @@ Button/styles/normal = SubResource("StyleBoxFlat_uddta")
 Button/styles/pressed = SubResource("StyleBoxFlat_fkvwx")
 HBoxContainer/constants/separation = 16
 HSlider/icons/grabber = SubResource("GradientTexture2D_p1ek5")
-HSlider/icons/grabber_disabled = null
+HSlider/icons/grabber_disabled = SubResource("GradientTexture2D_p1ek5")
 HSlider/icons/grabber_highlight = SubResource("GradientTexture2D_p1ek5")
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_p1ek5")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_p1ek5")

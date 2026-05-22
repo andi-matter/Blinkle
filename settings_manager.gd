@@ -60,7 +60,7 @@ func _on_up_button_button_up() -> void:
 
 
 func _on_right_button_button_down() -> void:
-	slide_x = -1
+	slide_x = 1
 	pass # Replace with function body.
 
 
@@ -70,7 +70,7 @@ func _on_right_button_button_up() -> void:
 
 
 func _on_left_button_button_down() -> void:
-	slide_x = 1
+	slide_x = -1
 	pass # Replace with function body.
 
 

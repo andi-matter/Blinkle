@@ -3,6 +3,7 @@ class_name HoverAnim
 
 @export var hover_animated : bool = true
 @export var click_animated : bool = true
+@export var release_animated : bool = false
 @export var click_button_index : int = MOUSE_BUTTON_LEFT
 
 @export var detect_control : Control
@@ -43,11 +44,11 @@ func _on_mouse_entered_detect():
 	pass
 	
 func _on_gui_input_detect(event : InputEvent):
-	if !click_animated:
+	if !click_animated and !release_animated:
 		return
 	if event is InputEventMouseButton:
 		if event.button_index == click_button_index:
-			if event.is_pressed():
+			if event.is_pressed() and click_animated:
 				if click_tween:
 					click_tween.kill()
 				click_tween = get_tree().create_tween()
@@ -57,6 +58,16 @@ func _on_gui_input_detect(event : InputEvent):
 				click_tween.tween_property(animated_control, "offset_transform_scale:x", scale, 0.1).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 				
 				click_tween.chain().tween_property(animated_control, "offset_transform_scale", Vector2.ONE, 0.1)
+			elif event.is_released() and release_animated:
+				if click_tween:
+					click_tween.kill()
+				click_tween = get_tree().create_tween()
+				click_tween.set_parallel(true)
+				var scale = max(1.2 * scale_multiplier, 1.05)
+				click_tween.tween_property(animated_control, "offset_transform_scale:y", scale * 0.8, 0.05).set_trans(Tween.TRANS_BACK)
+				click_tween.tween_property(animated_control, "offset_transform_scale:x", scale, 0.08).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+				
+				click_tween.chain().tween_property(animated_control, "offset_transform_scale", Vector2.ONE, 0.07).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
 				pass
 	
 func _on_mouse_exited_detect():
